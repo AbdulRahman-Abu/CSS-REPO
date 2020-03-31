@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>GRID</h1>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>  
+    <br><br>
+
+<h1>Grid row and columns</h1>
+    <div class="container2">
+        <div id="one">1</div>
+        <div id="two">2</div>
+        <div id="three">3</div>
+        <div id="four">4</div>
+        <div id="five">5</div>
+        <div id="six">6</div>
+        <div id="seven">7</div>
+        <div id="eight">8</div>
+    </div>
+    <br><br>
+
+<h1>Grid Template Area</h1>
+    <div class="home">
+        <header id="header">Header</header>
+        <section id="sectionA">Section One</section>
+        <section id="sectionB">Section Two</section>
+        <footer id="footer">Footer</footer>
+    </div>
+
+    <br><br>
+<h1>minmax and autofit for different screens</h1>
+    <div class="main">
+        <div id="one1">1</div>
+        <div id="two2">2</div>
+        <div id="three3">3</div>
+        <div id="four4">4</div>
+        <div id="five5">5</div>
+        <div id="six6">6</div>
+    </div>
+</body>
+
+<style>
+    .main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        /*since we dont know the screen size of the phone, set auto-fit,
+        then use minmax ie min width cant get below 100px and maxwidth cant
+        get above 1fr*/
+    }
+    .home {
+        display: grid;
+        grid-template: repeat(3, 1.6em) / repeat(4, 1fr);
+        grid-template-areas: 
+        "h h h h" /*occupy entire 4 columns*/
+        "a a b b"
+        "f f f f";
+    }
+    #header {
+        background-color: red;
+        grid-area: h;
+    }
+    #sectionA {
+        background-color: rebeccapurple;
+        grid-area: a;
+    }
+    #sectionB {
+        background-color: purple;
+        grid-area: b;
+    }
+    #footer {
+        background-color: olivedrab;
+        grid-area: f;
+    }
+    body {
+        font-size: 20px;
+    }
+    .container {
+        display: grid;
+        grid-template: repeat(3,  1.6em) / repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+    div :nth-child(1), :nth-child(5),:nth-child(8) {
+        background-color: slateblue;
+    }
+    div :nth-child(2), :nth-child(6),:nth-child(7) {
+        background-color: rgb(205, 90, 148);
+    }
+    div :nth-child(3), :nth-child(4),:nth-child(9) {
+        background-color: rgb(90, 201, 205);
+    }
+    .container2 {
+        display: grid;
+        grid-template: repeat(3,  1.6em) / repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+    #one {
+        grid-column: 1/4;  /* occupy col from line 2 to line 4*/
+    }
+    #two {
+        grid-row: 2/4; /* occupy row from line 2 to line 4*/
+    }
+    #three {
+        grid-column: 2/-1; /* occupy row from line 2 to the end of the line*/
+    }
+    #six {
+        grid-column: 1/-1; /* occupy row from line 2 to line 4*/
+    }
+
+
+
+    /* LONG WAY, dont use long journey
+
+      .container{
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        use fr(fraction) preferably when using grid or px
+        grid-template-columns: 200px 200px 200px; use px
+        
+        grid-template-rows: 1.6em 2.5em 1.6em;
+        grid-gap: 10px;
+        grid-auto-rows: 3em;
+        
+        grid-auto-rows applies to any grid item that will come up in any rows after the defined grip
+    }
+    
+    
+    */
+</style>
+</html>

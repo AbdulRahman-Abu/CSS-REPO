@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flexbox</title>
+</head>
+<body>
+<h1>Align and Justify Content</h1>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+   <br>
+
+   <div class="main">
+    <div class="item itema">1</div>
+    <div class="item itemb">2</div>
+    <div class="item itema">3</div>
+    <div class="item itemb">4</div>
+    <div class="item itema">5</div>
+    <div class="item itemb">6</div>
+    <div class="item itema">7</div>
+    <div class="item itemb">8</div>
+    <div class="item itema">9</div>
+    <div class="item itemb">10</div>
+    <div class="item itema">11</div>
+    <div class="item itemb">12</div>
+    <div class="item itema">13</div>
+    <div class="item itemb">14</div>
+    <div class="item itema">15</div>
+    <div class="item itemb">16</div>
+    <div class="item itema">17</div>
+    <div class="item itemb">18</div>
+</div>
+
+<br>
+<br>
+<h1>Sizing in flex bow</h1>
+<h2>Control individual elements when the page grows or shrink</h2>
+    <div class="container">
+        <div class="items" id="one">1</div>
+        <div class="items" id="twonow">2</div>
+        <div class="items" id="threenow">3</div>
+        <div class="items" id="fournow">4</div>
+        <div class="items">5</div>
+        <div class="items" id="sixnow">6</div>
+    </div>
+   <br>
+   <br>
+
+<h2>Ordering Elements In FlexBox</h2>
+   <div class="container">
+       <div class="items">1</div>
+       <div class="items">2</div>
+       <div class="items">3</div>
+       <div class="items">4</div>
+       <div class="items">5</div>
+       <div class="items">6</div>
+   </div>
+
+
+   <br>
+   <br>
+   <h2>Float Elements</h2>
+   <div class="mainnow">
+    <div class="itemsc">1</div>
+    <div class="itemsc">2</div>
+    <div class="itemsc">3</div>
+</div>
+<br>
+<br>
+<div class="container">
+<div>
+    <h1>IMAGES FOR CLEARING FLOATS</h1>
+    <img src="image1.jpeg" alt="image1">
+    <p>Need some front-end development training?
+       Frontend Masters is the best place to get it. They have courses on all the most important front-end technologies,
+       from React to CSS, from Vue to D3, and beyond with Node.js and Full Stack.</p>
+    <p>CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system,
+       meaning it can handle both columns and rows, unlike flexbox which is largely a 1-dimensional system. 
+       You work with Grid Layout by applying CSS rules both to a parent element (which becomes the Grid Container) and to that</p>
+    <p>CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system, 
+        meaning it can handle both columns and rows, unlike flexbox which is largely a 1-dimensional system. 
+        You work with Grid Layout by applying CSS rules both to a parent element (which becomes the Grid Container) 
+        and to that element's children (which become Grid Items).</p>
+    </div>
+</div>
+</body>
+<style>
+    img {
+        width: 150px;
+        height: 150px;
+        float: right;
+    }
+
+
+    .itemsc {
+        background-color: crimson;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        float:left;
+    }
+    .container div:nth-child(1) {
+    background-color: blue;
+    order: 6;
+    }
+    .container div:nth-child(2) {
+    background-color: green;
+    order: 5;
+    }
+    .container div:nth-child(3) {
+    background-color: red;
+    order: 1;
+    }
+    .container div:nth-child(4) {
+    background-color: yellow;
+    order: 2;
+    }
+    .container div:nth-child(5) {
+    background-color: brown;
+    order: 3;
+    }
+    .container div:nth-child(6) {
+    background-color:chartreuse;
+    order: 4;
+    }
+
+    .items {
+        flex-basis: 100px;
+        flex-grow: 1;
+        text-align: center;
+    }
+    #fournow {
+        flex: 1 3 100px; /* rep grow, shrink, basis*/
+    }
+    #threenow {
+        flex-shrink: 3;
+    }
+    #twonow {
+        flex-grow: 2;
+    }
+    #one {
+        flex-basis: 200px;
+    }
+    #sixnow {
+        align-self: flex-end; /*flex-grow made it grow to occupy the entire row*/
+    }
+    .main {
+        width:800px;
+        border: 2px solid black;
+        background-color: white;
+        font-size: 1.5em;
+        display: flex;
+        flex-wrap: wrap;
+        height: 800px;
+        flex-direction: row;
+        align-content: center;
+    }
+
+
+
+
+    .container {
+        font-size: 1.3em;
+        display: flex;
+        flex-wrap: wrap;
+        border: 2px solid black;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+    }
+    .item {
+        width: 100px;
+        border: black solid;
+        height: 100px;
+    }
+    .itema, .itemb {
+        width: 100px;
+        border: black solid;
+        height: 100px;
+    }
+    div :nth-child(1), :nth-child(3), :nth-child(5), .itema {
+        background-color: olivedrab;
+    }
+    div :nth-child(2), :nth-child(4), :nth-child(6), .itemb {
+        background-color: orangered;
+    }
+
+</style>
+ <!--Flexbox is used for one dimensional layout either column or rows
+        flex container: housing flex items
+        flex items: the items
+        flex direction: direction the items flow
+        display: flex is used on the main container and not items. traditionally, items flex to row direction.
+        flex-wrap: wrap to different lines esp when using a smaller screen and width is set
+        flex-flow: this combines flex-direction and flex-wrap to one.
+        justify-content: used along the main axis ie x axis to center, right or left items.OPTIONS: center, flex-start, flex-end
+        align-items: used along the cross axis ie y axis move centre, top or bottom.
+        To use align-items,give your container a height so you can see the effects. 
+        We can also move individual items eg item 6
+        Centering items is very difficult. So using justify-content and align-items does the magic 
+        align-content works with multiple lines of items and not one line  
+        align-content: stretch is the default value
+        flex-basis: This can be used instead of width in flexbox. Can be used individually and for all items
+        flex-grow: To grow a container or an element in width as you enlarge the browser
+        flex-shrink: To shrink a container/element multiple times as you reduce the browser
+        flex: This accepts 3 values starting from flex grow, flex shrink then flex basis.
+        Order: This has to do with reordering positions of elements
+        Positioning: Absolute, Relative and Static. Watch the video and read up
+        float: dont use float except necessary. use grid,flex
+        Stacking cards with z-index: This is used to position cards on top cards, ie cards staying on top cards.
+        
+    -->
+</html>
